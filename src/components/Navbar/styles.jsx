@@ -43,6 +43,9 @@ export const useStyles = makeStyles((theme) => ({
 			"&:focus": {
 				width: "20ch",
 			},
-		},
+        },
+        '&::placeholder' : {
+            color: "black",
+        },
 	},
 }));

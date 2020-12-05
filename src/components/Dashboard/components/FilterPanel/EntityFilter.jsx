@@ -18,8 +18,7 @@ const EntityFilter = (props) => {
 				{props.filters.map((item) => {
 					return (
 						<Chip
-                            /* style={{backgroundColor: "#ad0c45"}} */
-                            color="secondary"
+                            variant="outlined"
 							label={item.label}
 							onClick={() => handleClick(item.value)}
 						/>

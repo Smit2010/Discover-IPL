@@ -28,16 +28,17 @@ const Navbar = () => {
 					</Typography>
 				</Link>
 				<div style={{ flexGrow: 1 }} />
-				<div className={classes.search}>
+				<div className={classes.search} style={{backgroundColor: "white"}}>
 					<div className={classes.searchIcon}>
-						<SearchIcon />
+						<SearchIcon style={{color: "black"}} />
 					</div>
 					<InputBase
 						placeholder="Search…"
 						classes={{
 							root: classes.inputRoot,
 							input: classes.inputInput,
-						}}
+                        }}
+                        style={{color: "black"}}
 						inputProps={{ "aria-label": "search" }}
 					/>
 				</div>
