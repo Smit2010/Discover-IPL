@@ -34,7 +34,6 @@ const Dashboard = () => {
 	}, [entity]);
 
 	const handleFilterChange = (value) => {
-		console.log(value);
 		setEntity(value.entity);
 		setFilter(value.filter);
 	};
