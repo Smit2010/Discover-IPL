@@ -1,6 +1,5 @@
 import React from "react";
 import { TableBody, TableCell, TableRow } from "@material-ui/core";
-import { teams } from "../../../../data/teams";
 
 const descendingComparator = (a, b, orderBy) => {
 	if (b[orderBy] < a[orderBy]) {
@@ -31,7 +30,7 @@ const stableSort = (array, comparator) => {
 const TeamsTable = (props) => {
 	return (
 		<TableBody>
-			{stableSort(teams, getComparator(props.order, props.orderBy))
+			{stableSort(props.data, getComparator(props.order, props.orderBy))
 				.slice((props.page - 1) * 10, (props.page - 1) * 10 + 10)
 				.map((row, index) => {
 					const labelId = `enhanced-table-checkbox-${index}`;

@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { TableCell, TableRow, IconButton } from "@material-ui/core";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
-import DetailsTable from "./DetailsTable";
+
+const DetailsTable = React.lazy(() => import("./DetailsTable"));
 
 const DataTable = (props) => {
 	const [open, setOpen] = useState(false);

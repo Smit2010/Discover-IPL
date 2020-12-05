@@ -1,4 +1,4 @@
-export const batsmen = [
+const Batsmen = [
 	{
 		average: 35.69736842105263,
 		batsman: "V Kohli",
@@ -7564,3 +7564,5 @@ export const batsmen = [
 		total_runs: 0,
 	},
 ];
+
+export default Batsmen;

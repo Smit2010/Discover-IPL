@@ -11,10 +11,11 @@ import {
 	Grid,
 } from "@material-ui/core";
 import { Pagination } from "@material-ui/lab";
-import PlayersTable from "./PlayersTable";
-import TeamsTable from "./TeamsTable";
-import MatchesTable from "./MatchesTable";
 import { useStyles } from "./styles";
+
+const PlayersTable = React.lazy(() => import("./PlayersTable"));
+const TeamsTable = React.lazy(() => import("./TeamsTable"));
+const MatchesTable = React.lazy(() => import("./MatchesTable"));
 
 const EnhancedTableHead = (props) => {
 	const { classes, order, orderBy, onRequestSort } = props;
@@ -109,19 +110,22 @@ const EntityTable = (props) => {
 							<PlayersTable
 								order={order}
 								orderBy={orderBy}
-								page={page}
+                                page={page}
+                                data={props.data}
 							/>
 						) : props.entity === "Teams" ? (
 							<TeamsTable
 								order={order}
 								orderBy={orderBy}
-								page={page}
+                                page={page}
+                                data={props.data}
 							/>
 						) : (
 							<MatchesTable
 								order={order}
 								orderBy={orderBy}
-								page={page}
+                                page={page}
+                                data={props.data}
 							/>
 						)}
 					</Table>

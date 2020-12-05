@@ -27,7 +27,7 @@ export const PlayersFilter = [
 
 export const TeamsFilter = [
 	{
-		value: "team_name",
+		value: "team",
 		label: "Name",
 	},
 	{

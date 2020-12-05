@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { TableCell, TableRow, IconButton } from "@material-ui/core";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
-import ProfileTable from "./ProfileTable";
+const ProfileTable = React.lazy(() => import("./ProfileTable"));
 
 const DataTable = (props) => {
 	const [open, setOpen] = useState(false);
@@ -38,7 +38,7 @@ const DataTable = (props) => {
 				<TableCell align="left">
 					{row.average ? row.average.toFixed(2) : "-"}
 				</TableCell>
-				<TableCell align="left">{row.strike_rate.toFixed(2)}</TableCell>
+				<TableCell align="left">{row.strike_rate && row.strike_rate.toFixed(2)}</TableCell>
 			</TableRow>
 			<ProfileTable row={row} open={open} />
 		</>

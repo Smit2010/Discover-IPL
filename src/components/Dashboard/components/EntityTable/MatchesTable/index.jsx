@@ -1,7 +1,7 @@
 import React from "react";
 import { TableBody } from "@material-ui/core";
-import { matches } from "../../../../../data/matches";
-import DataTable from "./DataTable";
+
+const DataTable = React.lazy(() => import("./DataTable"));
 
 const descendingComparator = (a, b, orderBy) => {
 	if (b[orderBy] < a[orderBy]) {
@@ -32,7 +32,7 @@ const stableSort = (array, comparator) => {
 const TeamsTable = (props) => {
 	return (
 		<TableBody>
-			{stableSort(matches, getComparator(props.order, props.orderBy))
+			{stableSort(props.data, getComparator(props.order, props.orderBy))
 				.slice((props.page - 1) * 6, (props.page - 1) * 6 + 6)
 				.map((row) => {
 					return <DataTable row={row} />;

@@ -1,4 +1,4 @@
-export const matches = [
+const Matches = [
  {
    id: 1,
    season: "IPL-2017",
@@ -15120,3 +15120,5 @@ export const matches = [
    umpire3: "Nigel Llong"
  }
 ]
+
+export default Matches;

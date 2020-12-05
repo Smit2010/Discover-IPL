@@ -1,10 +1,11 @@
 import React from "react";
-import EntityFilter from "./EntityFilter";
 import {
 	PlayersFilter,
 	TeamsFilter,
 	MatchesFilter,
 } from "../../../../utils/filterAttributes";
+
+const EntityFilter = React.lazy(() => import("./EntityFilter"));
 
 const FilterPanel = (props) => {
 	return (

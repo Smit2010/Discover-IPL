@@ -40,23 +40,31 @@ const ProfileTable = (props) => {
 										component="th"
 										scope="row"
 									>
-										{row.profile.dob
+										{row.profile
 											? row.profile.dob
+												? row.profile.dob
+												: "-"
 											: "-"}
 									</TableCell>
 									<TableCell align="left">
-										{row.profile.country
+										{row.profile
 											? row.profile.country
+												? row.profile.country
+												: "-"
 											: "-"}
 									</TableCell>
 									<TableCell align="left">
-										{row.profile.batting_hand
+										{row.profile
 											? row.profile.batting_hand
+												? row.profile.batting_hand
+												: "-"
 											: "-"}
 									</TableCell>
 									<TableCell align="left">
-										{row.profile.bowling_skill
+										{row.profile
 											? row.profile.bowling_skill
+												? row.profile.bowling_skill
+												: "-"
 											: "-"}
 									</TableCell>
 								</TableRow>

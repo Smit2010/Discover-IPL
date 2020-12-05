@@ -8,9 +8,8 @@ const Navbar = () => {
 	const classes = useStyles();
 	return (
 		<AppBar
-			style={{ boxShadow: "none" }}
+			style={{ boxShadow: "none", backgroundColor: "#f64857" }}
             position="static"
-            color="inherit"
 		>
 			<Toolbar>
 				<Link

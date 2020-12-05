@@ -1,4 +1,4 @@
-export const players = [
+const Players = [
         {
             player_name: "A Ashish Reddy",
             dob: "24-Feb-91",
@@ -3745,3 +3745,5 @@ export const players = [
             country: "India"
         }
 ]
+
+export default Players;

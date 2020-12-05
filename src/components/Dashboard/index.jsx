@@ -1,16 +1,18 @@
-import React, { useEffect, useState } from "react";
-import Navbar from "../Navbar";
+import React, { useEffect, useState, Suspense } from "react";
 import { Grid } from "@material-ui/core";
-import FilterPanel from "./components/FilterPanel";
-import EntityTable from "./components/EntityTable";
-import { batsmen } from "../../data/batsmen";
-import { matches } from "../../data/matches";
-import { teams } from "../../data/teams";
 import {
 	teamHeadCells,
 	playerHeadCells,
 	matchHeadCells,
 } from "../../utils/tableHead";
+import Batsmen from "../../data/Batsmen";
+import Matches from "../../data/Matches";
+import Teams from "../../data/Teams";
+import LoadingComponent from "../Loading";
+
+const FilterPanel = React.lazy(() => import("./components/FilterPanel"));
+const EntityTable = React.lazy(() => import("./components/EntityTable"));
+const Navbar = React.lazy(() => import("../Navbar"));
 
 const Dashboard = () => {
 	const [entity, setEntity] = useState("");
@@ -20,13 +22,13 @@ const Dashboard = () => {
 
 	useEffect(() => {
 		if (entity === "Players") {
-			setData(batsmen);
+			setData(Batsmen);
 			setHeadCells(playerHeadCells);
 		} else if (entity === "Teams") {
-			setData(teams);
+			setData(Teams);
 			setHeadCells(teamHeadCells);
 		} else {
-			setData(matches);
+			setData(Matches);
 			setHeadCells(matchHeadCells);
 		}
 	}, [entity]);
@@ -38,7 +40,7 @@ const Dashboard = () => {
 	};
 
 	return (
-		<>
+		<Suspense fallback={<LoadingComponent />}>
 			<Navbar />
 			<Grid container style={{ marginTop: 20 }}>
 				<Grid item xs={1} />
@@ -56,7 +58,7 @@ const Dashboard = () => {
 					</Grid>
 				</Grid>
 			</Grid>
-		</>
+		</Suspense>
 	);
 };
 
