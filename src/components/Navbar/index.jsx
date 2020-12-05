@@ -8,8 +8,9 @@ const Navbar = () => {
 	const classes = useStyles();
 	return (
 		<AppBar
-			style={{ boxShadow: "none", backgroundColor: "#f64857" }}
+			style={{ boxShadow: "none"}}
             position="static"
+            color="inherit"
 		>
 			<Toolbar>
 				<Link
@@ -28,9 +29,9 @@ const Navbar = () => {
 					</Typography>
 				</Link>
 				<div style={{ flexGrow: 1 }} />
-				<div className={classes.search} style={{backgroundColor: "white"}}>
+				<div className={classes.search}>
 					<div className={classes.searchIcon}>
-						<SearchIcon style={{color: "black"}} />
+						<SearchIcon />
 					</div>
 					<InputBase
 						placeholder="Search…"
@@ -38,7 +39,6 @@ const Navbar = () => {
 							root: classes.inputRoot,
 							input: classes.inputInput,
                         }}
-                        style={{color: "black"}}
 						inputProps={{ "aria-label": "search" }}
 					/>
 				</div>
